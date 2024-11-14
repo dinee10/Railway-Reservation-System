@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ticket Booking Page</title>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressbook Railways</title>
+    <link rel="stylesheet" href="ticketbooking.css">
+</head>
+
+<body>
+    <header>
+        <div class = "container">
+        <a href = "homepage.html"><image src="images/logo.jpg" class = "hello"></a>
+    </div>
+        <div class="logo">
+            <h1 style="color: #fff;">Expressbook Railways</h1>
+        </div>
+          
+        <div class="dropdown">
+            <button class="dropdown-button">Login </button>
+            <div class="dropdown-content">
+              <a href="userlogin.html">Login as User</a>
+         
+              <a href="Stafflogin.html">Login as Admin</a>
+              <a href="customerservicelogin.html">Login as Customerservicer </a>
+              </div></div>
+          <a href="registration.html">Sign Up</a>
+        </div>
+
+    
+    </header>
+    <!-- Navigation bar -->
+    <nav>
+        <ul>
+            <li><a href="traintable.php">Train Schedule</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#feedbacks">Feedbacks</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <p id="datetime"></p>
+    <script>   function displayDateTime()
+     {    var now = new Date();
+          var date = now.toDateString(); 
+          var time = now.toLocaleTimeString();
+          var dateTimeString = date + ' ' + time; 
+          document.getElementById('datetime').innerHTML = dateTimeString;   }    
+      displayDateTime(); 
+    </script>
+    <div class="container2">
+        <h1><center>Booking Ticket</center></h1>
+        <form id="paymentForm" action="ticketbooking.php" method="post">
+          <div class="form-group2">
+            <label for="From">From</label>
+            <input type="text" id="From" name="From" placeholder="Starting From" autocomplete="off">
+          </div>
+          <div class="form-group2">
+            <label for="To">To</label>
+            <input type="text" id="To" name="To" placeholder="Where do you want to go" autocomplete="off">
+          </div>
+          <div class="form-group2">
+            <label for="Date"> Date</label>
+            <input type="date" id="Date" name="Date" placeholder="DD/MM/YY" autocomplete="off">
+          </div>
+          <div class="form-group2">
+            <label for="Class">Class</label>
+            <input type="text" id="Class" name="Class" placeholder="Enter Class" autocomplete="off">
+          </div>
+          <input type="submit" value="Submit" class="btn-submit" name="submit" onclick="openPopup()">
+          <div class="popup" id="popup">
+            
+          </div>
+        </form>
+      </div>
+    
+      <br><br><br>
+      
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com">Facebook</a>
+            <a href="https://www.twitter.com">Twitter</a>
+            <a href="https://www.instagram.com">Instagram</a>
+            <a href="https://www.google.com">Google</a>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Expressbook Railways
+        </div>
+    </footer>
+   

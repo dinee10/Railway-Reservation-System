@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: url('images/image2.jpg'); /* Replace 'your-background-image.jpg' with your image file */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .text-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .character {
+            font-size: 3rem;
+            font-weight: bold;
+            opacity: 0;
+            animation: moveAcrossScreen 4s linear infinite, fadeIn 2s alternate infinite;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Additional animations for each letter */
+        .character:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .character:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .character:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .character:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+
+        .character:nth-child(6) {
+            animation-delay: 1s;
+        }
+
+        .character:nth-child(7) {
+            animation-delay: 1.2s;
+        }
+
+        .character:nth-child(8) {
+            animation-delay: 1.4s;
+        }
+
+        /* Keyframes for moving letters across the screen */
+        @keyframes moveAcrossScreen {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Keyframes for fading in letters */
+        @keyframes fadeIn {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="text-container">
+            <span class="character">W    </span>
+            <span class="character">E    </span>
+            <span class="character">L    </span>
+            <span class="character">C    </span>
+            <span class="character">O    </span>
+            <span class="character">M    </span>
+            <span class="character">E    </span>
+            <span class="character">     </span>
+            <span class="character">:)</span>
+            
+        </div>
+    </div>
+</body>
+</html>
+
+
+    <script>
+        // Redirect to the home page after a delay (e.g., 5 seconds)
+        setTimeout(function() {
+            window.location.href = "homepage.html";
+        }, 4000); // 5000 milliseconds (5 seconds)
+    </script>
+</body>
+</html>

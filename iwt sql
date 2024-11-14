@@ -1,0 +1,320 @@
+CREATE TABLE User1 (
+        User_ID int NOT NULL,
+	Username varchar(50),
+	Password varchar(10),
+	F_Name varchar(10),
+	L_Name varchar(10),
+	NIC varchar(12),
+	Address varchar(60),
+	Gender varchar(8),
+	DOB varchar(10),
+	Phone_Number varchar(12),
+	CONSTRAINT User1_PK PRIMARY KEY(User_ID)
+); 
+
+CREATE TABLE Seat (
+    Seat_No int NOT NULL,
+	Available_Seat VARCHAR (50),
+	CONSTRAINT Seat_PK PRIMARY KEY(Seat_No)
+);
+
+ CREATE TABLE Customer_Service (
+    Case_ID int NOT NULL,
+    Case_Info VARCHAR(255),
+    Case_Handler VARCHAR(50),
+    CONSTRAINT Customer_Service_PK PRIMARY KEY(Case_ID)
+);
+
+
+CREATE TABLE Profile (
+        Profile_ID int NOT NULL,
+	Username VARCHAR(50),
+	Password VARCHAR(10),
+	Case_ID int,
+	Seat_No int,
+	CONSTRAINT Profile_PK PRIMARY KEY(Profile_ID),
+	CONSTRAINT Profile_Customer_FK FOREIGN KEY(Case_ID) REFERENCES Customer_Service(case_ID),
+	CONSTRAINT PROFILE_Seat_FK FOREIGN KEY(Seat_No) REFERENCES Seat(Seat_No) 
+);
+
+
+CREATE TABLE Administrator (
+    Admin_ID int NOT NULL,
+    Password VARCHAR(255),
+    F_Name VARCHAR(50),
+    L_Name VARCHAR(50),
+    NIC VARCHAR(20),
+    Address VARCHAR(50),
+    Email VARCHAR(100),
+    User_ID int,
+    CONSTRAINT Administator_PK PRIMARY KEY (Admin_ID), 
+    CONSTRAINT Admin_User_FK FOREIGN KEY (User_ID) REFERENCES User1(User_ID)
+);
+
+
+CREATE TABLE Train_Status (
+    Status_ID int NOT NULL,
+    Available_seat int,
+    Book_Seat int,
+    Date DATE,
+    User_ID int,
+    CONSTRAINT Train_Status_PK PRIMARY KEY(Status_ID)
+    
+);
+
+CREATE TABLE Passenger (
+    P_ID int NOT NULL,
+    F_Name VARCHAR(50),
+    L_Name VARCHAR(50),
+    NIC VARCHAR(20),
+    Gender VARCHAR(10),
+    Age int,
+    Phone_No VARCHAR(15),
+    Email VARCHAR(100),
+    Seat_No int,
+    Reserve_Status VARCHAR(20),
+    CONSTRAINT Passenger_PK PRIMARY KEY(P_ID)
+);
+
+
+CREATE TABLE Train_Passenger (
+    P_ID int NOT NULL,
+    Status_ID int NOT NULL,
+    CONSTRAINT Train_Passenger_PK  PRIMARY KEY(P_ID,Status_ID ),
+    CONSTRAINT Train_Passenger_Passenger_FK FOREIGN KEY (P_ID) REFERENCES Passenger(P_ID),
+    CONSTRAINT Train_Passenger_Statuse_FK FOREIGN KEY (Status_ID) REFERENCES Train_Status(Status_ID)
+);
+
+
+CREATE TABLE Train (
+    I_ID int NOT NULL,
+    T_Name VARCHAR(50),
+    T_Type VARCHAR(50),
+    Available_Class VARCHAR(50),
+    Status_ID int,
+    CONSTRAINT Train_PK PRIMARY KEY(I_ID),
+    CONSTRAINT Train_FK FOREIGN KEY (Status_ID) REFERENCES Train_Status(Status_ID)
+);
+
+CREATE TABLE Station (
+    Station_ID int NOT NULL,
+    Station_Name VARCHAR(50),
+	CONSTRAINT Station_PK PRIMARY KEY(Station_ID)
+);
+
+CREATE TABLE Train_Station (
+    I_ID int NOT NULL,
+    Station_ID int NOT NULL,
+    CONSTRAINT Train_Station_PK PRIMARY KEY (I_ID, Station_ID),
+    CONSTRAINT TRAIN_STATION_TRAIN_FK FOREIGN KEY (I_ID) REFERENCES Train(I_ID),
+    CONSTRAINT Train_Station_Station_FK FOREIGN KEY (Station_ID) REFERENCES Station(Station_ID)
+);
+
+CREATE TABLE Route (
+    Route_ID int NOT NULL,
+    Arrival_Time TIME,
+    No_of_stops int,
+    Depart_Time TIME,
+    CONSTRAINT Route_PK PRIMARY KEY(Route_ID)
+	
+);
+
+CREATE TABLE Station_Route (
+    Station_ID int NOT NULL,
+    Route_ID int NOT NULL,
+    CONSTRAINT Station_Route_PK PRIMARY KEY (Station_ID, Route_ID),
+    CONSTRAINT Station_Route_Station_FK FOREIGN KEY (Station_ID) REFERENCES Station(Station_ID),
+    CONSTRAINT Station_Route_Route_FK FOREIGN KEY (Route_ID) REFERENCES Route(Route_ID)
+);
+
+
+
+CREATE TABLE Payment (
+    Invoice_ID int NOT NULL,
+    Date DATE,
+    Amount DECIMAL(10, 2),
+    Status VARCHAR(20),
+    Case_ID int,
+    CONSTRAINT Payment_PK PRIMARY KEY(Invoice_ID),
+    CONSTRAINT Payment_FK FOREIGN KEY (Case_ID) REFERENCES Customer_Service(Case_ID)
+);
+
+CREATE TABLE Review(
+     R_ID int NOT NULL,
+     User_ID int NOT NULL,
+     Review VARCHAR(100),
+     CONSTRAINT Review_PK PRIMARY KEY(R_ID),
+     CONSTRAINT Review_FK FOREIGN KEY (User_ID) REFERENCES User1(User_ID));
+
+CREATE TABLE book(
+  booking_id int NOT NULL,
+  dfrom varchar(50),
+  dto varchar(50),
+  ddate date,
+  dclass varchar(10),
+  CONSTRAINT book_PK PRIMARY KEY(booking_id)
+);
+
+CREATE TABLE payment1 (
+  payment_id int,
+  Card_Number int,
+  Cardholder_Name varchar(50),
+  Expiry_Date date,
+  CVV int(5),
+  CONSTRAINT payment1_PK PRIMARY KEY(payment_id)
+);
+    
+
+-- Inserting data into the User1 table
+INSERT INTO User1 (User_ID, Username, Password, F_Name, L_Name, NIC, Address, Gender, DOB, Phone_Number)
+VALUES
+    (1, 'ShanDesilva@gmail.com', 'pass123', 'Sahen', 'Desilva', '123456789012', '123 Main St, Battarmulla', 'Male', '1990-05-15', '071-3456781'),
+    (2, 'ShenyaAmarasena@gmail.com', 'password3', 'Shenya', 'Amarasena', '098765432109', '456 Elm St, Town', 'Female', '1985-07-20', '077-9876543'),
+    (3, 'AsheEdiriwira@gmail.com', 'qwerty', 'Ashen', 'Ediriwira', '543216789023', '789 2nd Avenue,Panadura', 'Male', '1988-12-10', '074-6578456'),
+    (4, 'JennyDias@gmail.com', 'abc123', 'Jenny', 'Dias', '987654321045', '567 1st Street, Mount Lavinia', 'Female', '1995-03-25', '078-4567342'),
+    (5, 'EvaRajapaksha@gmail.com', 'passpass', 'Eva', 'Rajapaksha', '123459876543', '101 River Rd, Dehiwala', 'Female', '1980-09-05', '070-4567342');
+
+-- Inserting data into the Seat table
+INSERT INTO Seat(Seat_No, Available_Seat)
+VALUES
+    (1, 'A1'),
+    (2, 'A2'),
+    (3, 'B1'),
+    (4, 'B2'),
+    (5, 'C1');
+
+-- Inserting data into the Customer_Service table
+INSERT INTO Customer_Service(Case_ID, Case_Info, Case_Handler)
+VALUES
+    (1, 'Issue 1', 'Handler 1'),
+    (2, 'Issue 2', 'Handler 2'),
+    (3, 'Issue 3', 'Handler 1'),
+    (4, 'Issue 4', 'Handler 3'),
+    (5, 'Issue 5', 'Handler 2');
+
+-- Inserting data into the Profile table
+INSERT INTO Profile (Profile_ID, Username, Password, Case_ID, Seat_No)
+VALUES
+    (1, 'user1', 'pass123', 1, 1),
+    (2, 'user2', 'password', 2, 2),
+    (3, 'user3', 'qwerty', 3, 3),
+    (4, 'user4', 'abc123', 4, 4),
+    (5, 'user5', 'passpass', 5, 5);
+
+-- Inserting data into the Administrator table
+INSERT INTO Administrator (Admin_ID, Password, F_Name, L_Name, NIC, Address, Email, User_ID)
+VALUES
+    (1, 'adminpass1',  'Ashi', 'Dissanayake', '9764543234V', '12 Main street, Kandy', 'ashidiss@gmail.com', 1),
+    (2, 'adminpass2',  'Ayathma', 'Amarathunga', '9887653219V', '211 2nd street, Matale', 'ayathma2@gmail.com', 2),
+    (3, 'adminpass3',  'Josh', 'Fernando', '97321678902V', '45 Main Street, Kaluthara', 'josh23@gmail.com', 3),
+    (4, 'adminpass4',  'David', 'Soyza', '98765432104V', '789 Jiya Avenue, Kadawatha', 'david45@gmail.com', 4),
+    (5, 'adminpass5',  'Rose', 'Desilva', '983459876543V', 'Flower Avenue, Gampaha', 'rose5@gmail.com', 5);
+
+
+-- Inserting data into the Train_Status table
+INSERT INTO Train_Status (Status_ID, Available_seat, Book_Seat, Date, User_ID)
+VALUES
+    (1, 100, 50, '2023-10-11', 1),
+    (2, 120, 60, '2023-10-12', 2),
+    (3, 90, 30, '2023-10-13', 3),
+    (4, 80, 40, '2023-10-14', 4),
+    (5, 110, 70, '2023-10-15', 5);
+
+-- Inserting data into the Passenger table
+INSERT INTO Passenger (P_ID, F_Name, L_Name, NIC, Gender, Age, Phone_No, Email, Seat_No, Reserve_Status)
+VALUES
+    (1, 'Shen', 'Ranathunga', '91345678901V', 'Male', 30, '077-8976543', 'shen2@gmail.com', 1, 'Reserved'),
+    (2, 'Nuradi', 'Amarasinghe', '90876543210V', 'Female', 25, '072-7896543', 'radiama9@gmail.com', 2, 'Reserved'),
+    (3, 'Venura', 'Desilva', '78321678902V', 'Male', 35, '071-3456213', 'venura78@gmail.com', 3, 'Reserved'),
+    (4, 'Tanasha', 'Soysa', '98765432104V', 'Female', 28, '076-5609784', 'tanasha98@gmail.com', 4, 'Reserved'),
+    (5, 'Dinesha', 'Dissanayake', '91345987654V', 'Female', 43, '078-3456234', 'dineshadiss@gmail.com', 5, 'Reserved');
+
+
+-- Inserting data into the Train_Passenger table
+INSERT INTO Train_Passenger (P_ID, Status_ID)
+VALUES
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5);
+
+
+
+-- Inserting data into the Train table
+INSERT INTO Train (I_ID, T_Name, T_Type, Available_Class, Status_ID)
+VALUES
+    (1, 'Express Train', 'High-speed', 'First Class', 1),
+    (2, 'Regional Train', 'Medium-speed', 'Economy Class', 2),
+    (3, 'Local Train', 'Low-speed', 'Standard Class', 3),
+    (4, 'Night Train', 'Sleeper', 'Sleeper Class', 4),
+    (5, 'Luxury Train', 'High-speed', 'Luxury Class', 5);
+
+-- Inserting data into the Station table
+INSERT INTO Station (Station_ID, Station_Name)
+VALUES
+    (1, 'Station Anuradhapura'),
+    (2, 'Station Badulla'),
+    (3, 'Station Colombo fort'),
+    (4, 'Station Diyathalawa'),
+    (5, 'Station Ella');
+    
+
+-- Inserting data into the Train_Station table
+INSERT INTO Train_Station (I_ID, Station_ID)
+VALUES
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5);
+    
+
+-- Inserting data into the Route table
+INSERT INTO Route (Route_ID, Arrival_Time, No_of_stops, Depart_Time)
+VALUES
+    (1, '08:00:00', 5, '07:00:00'),
+    (2, '10:30:00', 3, '09:30:00'),
+    (3, '12:45:00', 2, '11:45:00'),
+    (4, '15:15:00', 4, '14:15:00'),
+    (5, '18:30:00', 1, '17:30:00');
+
+-- Inserting data into the Station_Route table
+INSERT INTO Station_Route (Station_ID, Route_ID)
+VALUES
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5);
+
+-- Inserting data into the Payment table
+INSERT INTO Payment (Invoice_ID, Date, Amount, Status, Case_ID)
+VALUES
+    (1, '2023-10-11', 5000.00, 'Paid', 1),
+    (2, '2023-10-12', 3000.00, 'Paid', 2),
+    (3, '2023-10-13', 2500.00, 'Pending', 3),
+    (4, '2023-10-14', 1050.00, 'Paid', 4),
+    (5, '2023-10-15', 9050.05, 'Pending', 5);
+
+-- Inserting data into the Review Table
+INSERT INTO Review (R_ID, User_ID, Review)
+VALUES
+    (1, 1, 'The reservation process was quick and easy. Great job!'),
+    (2, 2, 'The train was on time, and the seats were comfortable.'),
+    (3, 3, ' I had some issues with the online payment system. Please improve it.'),
+    (4, 4, 'This service exceeded my expectations. I highly recommend it!'),
+    (5, 5, 'I like the addition of user reviews. Its helpful to read about other travelers experiences and get tips for my own journey.');
+
+INSERT INTO book (booking_id, dfrom, dto, ddate, dclass) 
+VALUES
+(1, '0', '0', '0000-00-00', '2'),
+(2, 'kandy', 'colombo', '2023-10-25', '1st class'),
+(3, 'colombo', 'matale', '2023-10-27', '3rd class'),
+(4, 'mathale', 'colombo', '2023-10-20', '2');
+
+INSERT INTO payment1 (payment_id, Card_Number, Cardholder_Name, Expiry_Date, CVV) 
+VALUES
+(11, 12345, 'loope', '2023-10-20', 456),
+(12, 123, 'gayashan', '2023-10-15', 677),
+(15, 4444, 'saki', '2023-11-04', 345);

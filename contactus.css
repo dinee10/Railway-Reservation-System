@@ -1,0 +1,182 @@
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+
+body {
+    background-image: url('images/IMAGE.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; /* Center the background image */
+    background-color: #f0f0f0; /* Fallback background color */
+}
+header {
+    background-color: none;
+    color: #fcf5f5;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+
+.hello {
+    position: absolute;
+    height: 80px; /* Decreased height to 100 pixels */
+    left: 0px;
+    width: 100px; /* Decreased width to 150 pixels */
+    margin-top: 10px, 0px;
+} .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Style the button that will open the dropdown */
+ .dropdown-button {
+    font-size: 1rem;
+    background-color: transparent;
+    margin-left: 1rem;
+    color: #fffdfd;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+}
+
+
+  /* Style the dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  /* Style the dropdown links */
+  .dropdown-content a {
+    font-size: rem;
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  
+  /* Show the dropdown content when the button is clicked */
+  .dropdown:hover .dropdown-content {
+    display: block;
+    
+  }
+
+
+label {
+    color: #f9faf9; 
+    margin-bottom: 5px;
+	font-size: 20px;
+}
+
+
+.user-options {
+    float: right;
+    margin-top: 10px;
+}
+
+.user-options a {
+    color: #4441468a;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.user-options a {
+    color: #faf4fa;
+    margin: 0 10px;
+    text-decoration: none;
+    padding-left: 20px; /* Add left padding for the image */
+    background: url('images/your.image.png') left center no-repeat; /* Add your image here */
+    background-size: 16px 16px; /* Adjust the size of the image as needed */
+}
+
+
+nav ul {
+    background-color: none;
+    color: #f9f6fa;
+    list-style-type: none;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 30px;
+}
+
+nav ul li a {
+    color: #f1e9e9f8;
+    text-decoration: none;
+}
+.social-links {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.social-links a {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: left;
+    margin-left: 20px;
+    color: #f0e8e8fb;
+}
+
+
+	input[type=text], select, textarea {
+		width: 100%;
+		padding: 12px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+		margin-top: 6px;
+		margin-bottom: 16px;
+		resize: vertical;
+	}
+	
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+	input[type=submit] {
+		background-color: #04AA6D;
+		color: white;
+		padding: 12px 20px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	input[type=submit]:hover {
+		background-color: #45a049;
+	}
+
+	.container {
+		border-radius: 5px;
+		background-color:transparent;
+		padding: 20px;
+	}
+    #datetime {
+        font-size: 24px;
+        font-family: Arial, sans-serif;
+        color: #ffffff;
+        text-align: center;
+        margin-top: 100px;
+      }

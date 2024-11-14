@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Details</title>
+    <link rel="stylesheet" href="passenger.css">
+</head>
+
+<body>
+        <header>
+            <div class = "container">
+                <a href="homepage.html"> <img src = "images/logo.jpg"class = "hello"></a>
+        </div>
+            <div class="logo">
+                <h1>Expressbook Railways</h1>
+            </div>
+            <div class="user-options">
+                <div class="user-options">
+                    <div class="dropdown">
+                        <button class="dropdown-button">Login </button>
+                        <div class="dropdown-content">
+                          <a href="userlogin.html">Login as User</a>
+                     
+                          <a href="Stafflogin.html">Login as Admin</a>
+                          <a href="customerservicelogin.html">Login as Customerservicer </a>
+                          </div></div>
+                <a href="registration.html">Sign Up</a>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="traintable.php">Train Schedule</a></li>
+                 <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#feedbacks">Feedbacks</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    
+
+    <main>
+        <p id="datetime"></p>
+        <script>   function displayDateTime()
+                {    var now = new Date();
+                     var date = now.toDateString(); 
+                     var time = now.toLocaleTimeString();
+                     var dateTimeString = date + ' ' + time; 
+                     document.getElementById('datetime').innerHTML = dateTimeString;   }    
+                 displayDateTime(); 
+               </script>
+        <section class="passenger-form">
+            <h2>Primary Passenger</h2>
+            <form action="pasenger.php" method="POST">
+                <label for="title">Title:</label>
+                <select id="title" name="title" required>
+                    <option value="Mr">Mr</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Miss">Miss</option>
+                    <option value="Ms">Ms</option>
+                </select>
+                
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first_name" required>
+
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last_name" required>
+
+                <label for="first-name">Seat No:</label>
+                <input type="text" id="Seat-NO" name="Seat_No">
+
+                <label for="gender">Gender:</label>
+                <input type="text" id="gender" name="gender" required>
+
+                <label for="nic-passport">NIC or Passport Number:</label>
+                <input type="text" id="nic-passport" name="nic_passport" required>
+
+                <label for="phone number">Phone Number:</label>  </label>
+                <input type="text" id="phone-number" name="phone_number" required>
+
+                <label for="email/">E-mail:</label>  </label>
+                <input type="text" id="email" name="email" required>
+               
+                
+                <button id="Submit-button" href="pasenger.php">Submit</button>
+            
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com">Facebook</a>
+            <a href="https://www.twitter.com">Twitter</a>
+            <a href="https://www.instagram.com">Instagram</a>
+            <a href="https://www.google.com">Google</a>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Expressbook Railways
+        </div>
+    </footer>   
+</body>
+</html>

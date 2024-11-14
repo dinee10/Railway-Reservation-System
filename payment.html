@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Payment Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressbook Railways</title>
+    <link rel="stylesheet" href="payment.css">
+   
+</head>
+
+<body>
+    <header>
+        <div class = "container">
+        <a href="homepage.html"><img src = "images/logo.jpg" class = "hello"></a>
+    </div>
+        <div class="logo">
+            <h1 style="color: #fff;">Expressbook Railways</h1>
+        </div>
+          
+        <div class="user-options">
+            <div class="dropdown">
+                <button class="dropdown-button">Login </button>
+                <div class="dropdown-content">
+                  <a href="userlogin.html">Login as User</a>
+             
+                  <a href="Stafflogin.html">Login as Admin</a>
+                  <a href="customerservicelogin.html">Login as Customerservicer </a>
+                  </div></div>
+            <a href="registration.html">Sign Up</a>
+        </div>
+        
+
+    
+    </header>
+    
+    <!-- Navigation bar -->
+    <nav>
+        <ul>
+            <li><a href="traintable.php">Train Schedule</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#feedbacks">Feedbacks</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <p id="datetime"></p>
+    <script>   function displayDateTime()
+			{    var now = new Date();
+				 var date = now.toDateString(); 
+				 var time = now.toLocaleTimeString();
+				 var dateTimeString = date + ' ' + time; 
+				 document.getElementById('datetime').innerHTML = dateTimeString;   }    
+			 displayDateTime(); 
+		   </script>
+    <div class="container2">
+        <h1>Payment Information</h1>
+        <form id="paymentForm" action="payment.php" method="post"  >
+          <div class="form-group2">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter your card number" autocomplete="off" required>
+          </div>
+          <div class="form-group2">
+            <label for="cardName">Cardholder Name</label>
+            <input type="text" id="cardName" name="cardName" placeholder="Enter the cardholder's name"  autocomplete="off"  required>
+          </div>
+          <div class="form-group2">
+            <label for="expiryDate">Expiry Date</label>
+            <input type="date" id="expiryDate" name="expiryDate" placeholder="MM/YY"  autocomplete="off" required>
+          </div>
+          <div class="form-group2">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" placeholder="Enter CVV"  autocomplete="off" required>
+          </div>
+          <input type="submit" value="Submit" class="btn-submit" name="submit" onclick="openPopup()">
+          <div class="popup" id="popup">
+            <h2>Thank you!</h2>
+            <p>Your payment has been successful</p>
+            
+            <button type="button" name="submit"  onclick="closePopup()"> OK </button>
+          </div>
+        </form>
+      </div>
+      
+      <br><br><br>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com">Facebook</a>
+            <a href="https://www.twitter.com">Twitter</a>
+            <a href="https://www.instagram.com">Instagram</a>
+            <a href="https://www.google.com">Google</a>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Expressbook Railways
+        </div>
+    </footer>

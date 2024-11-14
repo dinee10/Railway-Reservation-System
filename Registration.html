@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <link rel="stylesheet" href="registration.css">
+</head>
+
+<body>
+        <header>
+            <div class = "container">
+                <a href="homepage.html"> <img src = "images/logo.jpg"class = "hello"></a>
+        </div>
+            <div class="logo">
+                <h1>Expressbook Railways</h1>
+            </div>
+            <div class="user-options">
+                <div class="user-options">
+                    <div class="dropdown">
+                        <button class="dropdown-button">Login </button>
+                        <div class="dropdown-content">
+                          <a href="userlogin.html">Login as User</a>
+                     
+                          <a href="Stafflogin.html">Login as Admin</a>
+                          <a href="customerservicelogin.html">Login as Customerservicer </a>
+                          </div></div>
+                <a href="registration.html">Sign Up</a>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="traintable.php">Train Schedule</a></li>
+                 <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#feedbacks">Feedbacks</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    
+
+    <main>
+        <p id="datetime"></p>
+        <script>   function displayDateTime()
+                {    var now = new Date();
+                     var date = now.toDateString(); 
+                     var time = now.toLocaleTimeString();
+                     var dateTimeString = date + ' ' + time; 
+                     document.getElementById('datetime').innerHTML = dateTimeString;   }    
+                 displayDateTime(); 
+               </script>
+        <section class="login-form">
+            <h2>Signup Details</h2>
+            <form action="registration.php" method="POST">
+                
+            <form>
+                <h2 id="first">Details</h2>
+                <label for="name-and-address">
+                    <p>First Name</p>
+                    <input type="text" name="first_name">
+                    <p>Last Name</p>
+                    <input type="text" name="last_name">
+                    <p>Gender</p>
+                    <input type="text" name="gender">
+                    <p>Your NIC/Passport No.</p>
+                    <input type="text" name="nic_passport">
+                    <input type="radio" name="nic" id=" NICradio" value="NIC">NIC
+                    <input type="radio" name="nic" id="Passportradio" value="Passport">Passport
+                    <p>Address</p>
+                    <input type="text" name="Address">
+                </label>
+                <h2 id="second">Email & Phone</h2>
+                <label for="email-and-phone">
+                    <p>Email Address</p>
+                    <input type="email" name="email">
+                    <p>Phone Number</p>
+                    <input type="tel" name="phone_number">
+
+
+                </label>
+                <h2 id="third">Password</h2>
+                <label for="passwords">
+                    <p>Password</p>
+                    <input type="password">
+                    <p>Confirm Password</p>
+                    <input type="password" name="password">
+                </label>
+                <div class="wrap">
+                    <button id="Submit-button" href="user.php">Submit</button>
+            
+                </div>
+            </form>
+
+
+            
+        </section>
+    </main>
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com">Facebook</a>
+            <a href="https://www.twitter.com">Twitter</a>
+            <a href="https://www.instagram.com">Instagram</a>
+            <a href="https://www.google.com">Google</a>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Expressbook Railways
+        </div>
+    </footer>   
+</body>
+</html>

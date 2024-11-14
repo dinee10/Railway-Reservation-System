@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Staff Login</title>
+    <link rel="stylesheet" href="stafflogin.css">
+ 
+</head>
+
+<body>
+    <header>
+        <div class = "container">
+       <a href="homepage.html"> <img src = "images/logo.jpg"class = "hello"></a>
+    </div>
+        <div class="logo">
+            <h1>Expressbook Railways</h1>
+        </div>
+        <div class="user-options">
+            <div class="user-options">
+                <div class="dropdown">
+                    <button class="dropdown-button">Login </button>
+                    <div class="dropdown-content">
+                      <a href="userlogin.html">Login as User</a>
+                 
+                      <a href="Stafflogin.html">Login as Admin</a>
+                      <a href="customerservicelogin.html">Login as Customerservicer </a>
+                      </div></div>
+            <a href="registration.html">Sign Up</a>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="traintable.php">Train Schedule</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#feedbacks">Feedbacks</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+<main>
+    <p id="datetime"></p>
+    <script>   function displayDateTime()
+			{    var now = new Date();
+				 var date = now.toDateString(); 
+				 var time = now.toLocaleTimeString();
+				 var dateTimeString = date + ' ' + time; 
+				 document.getElementById('datetime').innerHTML = dateTimeString;   }    
+			 displayDateTime(); 
+		   </script>
+        <div class="login-container">
+      
+
+      
+            <h3>Admin Login</h3>
+
+            <img src="images/staffimage.png" alt="Your Image"><br><br>
+            <section class="passenger-form">
+                <form action="Adminlogin.php" method="post"  >
+                <label for="adminEmail">Email:</label>
+                <input type="text" id="adminEmail" name="adminemail" placeholder="info@gmail.com" required> <br><br>
+
+                <label for="adminPassword">Password:</label>
+                <input type="password" id="adminPassword" name="adminPassword" placeholder="XXXXXXXX" required> <br><br>
+<div class="button">
+    <button type="submit" class="signbutton">LogIn</button>
+            </form>
+    
+</section>
+</main>
+    </div>
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com">Facebook</a>
+            <a href="https://www.twitter.com">Twitter</a>
+            <a href="https://www.instagram.com">Instagram</a>
+            <a href="https://www.google.com">Google</a>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Expressbook Railways
+        </div>
+    </footer>   
+</body>
+
+</html>

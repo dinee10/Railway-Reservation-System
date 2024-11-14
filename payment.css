@@ -1,0 +1,234 @@
+body{
+    background: url(images/bg2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container2 {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+  }
+  
+  .container2>h1s {
+    text-align: center;
+  }
+  
+  .form-group2 {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"] {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .btn-submit {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-submit:hover{
+    background-color: #7da9fa;
+  }
+
+  .popup{
+    width: 300px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px ;
+    color: #333 ;
+    visibility: hidden;
+    transition: transform 0.4s , top 0.4s;
+  }
+
+  .open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+
+  }
+
+  .popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+  }
+
+  .popup button{
+    width: 100%;
+    margin-top:50px;
+    margin-left: 5px;
+    padding: 10px 0;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .accessButton button{
+    background-color: white;
+    border: none;
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+  }
+header {
+    background-color: none;
+    color: #ffffff0e;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+
+.hello {
+    position: absolute;
+    height: 80px; /* Decreased height to 100 pixels */
+    left: 0px;
+    width: 100px; /* Decreased width to 150 pixels */
+    margin-top: 10px, 0px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }        
+
+  /* Style the button that will open the dropdown */
+ .dropdown-button {
+    font-size: 1rem;
+    background-color: transparent;
+    margin-left: 1rem;
+    color: #fcf9f9;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+}
+
+
+  /* Style the dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  /* Style the dropdown links */
+  .dropdown-content a {
+    font-size: rem;
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  
+  /* Show the dropdown content when the button is clicked */
+  .dropdown:hover .dropdown-content {
+    display: block;
+    
+  }
+
+
+.user-options {
+    float: right;
+    margin-top: 10px;
+}
+
+.user-options a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.user-options a {
+    color: #ffffffd7;
+    margin: 0 10px;
+    text-decoration: none;
+    padding-left: 20px; /* Add left padding for the image */
+    background: url('images/your.image.png') left center no-repeat; /* Add your image here */
+    background-size: 16px 16px; /* Adjust the size of the image as needed */
+}
+
+
+nav ul {
+    background-color: none;
+    color: #f9f6fa05;
+    list-style-type: none;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 30px;
+}
+
+nav ul li a {
+    color: #f1e9e9f8;
+    text-decoration: none;
+}
+.social-links {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.social-links a {
+    color: #f1e9e9f8;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: left;
+    margin-left: 20px;
+    color: #f0e8e8fb;
+}
+#datetime {
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 100px;
+}

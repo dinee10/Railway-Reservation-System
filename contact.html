@@ -1,0 +1,90 @@
+<html>
+<head>
+    <link rel="stylesheet" href="contactus.css">
+
+</head>
+<body>
+	<header>
+		
+			<div class = "container">
+                <a href="homepage.html"> <img src = "images/logo.jpg"class = "hello"></a>
+		</div>
+			<div class="logo">
+				<h1>Expressbook Railways</h1>
+			</div>
+			<div class="user-options">
+				<div class="user-options">
+                    <div class="dropdown">
+                        <button class="dropdown-button">Login </button>
+                        <div class="dropdown-content">
+                          <a href="userlogin.html">Login as User</a>
+                     
+                          <a href="Stafflogin.html">Login as Admin</a>
+                          <a href="customerservicelogin.html">Login as Customerservicer </a>
+                          </div></div>
+				<a href="registration.html">Sign Up</a>
+			</div>
+		</header>
+	
+		<nav>
+			<ul>
+				<li><a href="traintable.php">Train Schedule</a></li>
+				<li><a href="#gallery">Gallery</a></li>
+				<li><a href="#feedbacks">Feedbacks</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</nav>
+		
+    </header>
+	<main>
+		<p id="datetime"></p>
+		<script>   function displayDateTime()
+				{    var now = new Date();
+					 var date = now.toDateString(); 
+					 var time = now.toLocaleTimeString();
+					 var dateTimeString = date + ' ' + time; 
+					 document.getElementById('datetime').innerHTML = dateTimeString;   }    
+				 displayDateTime(); 
+			   </script>
+<div class="container">
+	<form action="contact us.php" method="post" class="ContactUsForm" >
+	<h2>Contact Us</h2>
+
+    <label for="name">Your Name<br><br></label>
+    <input type="text" id="name" name="yourname" placeholder="Your name.."><br><br><br>
+
+    <label for="email">Your Email<br><br></label>
+    <input type="text" id="email" name="email" placeholder="Your email.."><br><br><br>
+
+	<label for="email">Your Mobile<br><br></label>
+    <input type="text" id="mobile" name="yourmobile" placeholder="Your mobile.."><br><br><br>
+	
+	<label for="subject">Subject<br><br></label>
+    <select id="subject" name="subject">
+      <option value="complaint">Select Complaint Subject</option><br><br><br>
+      <option value="technical">Technical Issue</option>
+      <option value="payment">Payment Issue</option>
+	  <option value="support">Support Case</option>
+    </select><br><br><br>
+
+    <label for="message">Message</label><br><br><br>
+    <textarea id="message" name="message" placeholder="Write your complaint.." style="height:150px"> </textarea><br><br><br>
+	<input type="submit" value="Submit" class="submitComment">
+    <br><br><br>
+
+  </form>
+</div>
+</main>
+<footer>
+	<div class="social-links">
+		<a href="https://www.facebook.com">Facebook</a>
+		<a href="https://www.twitter.com">Twitter</a>
+		<a href="https://www.instagram.com">Instagram</a>
+		<a href="https://www.google.com">Google</a>
+	</div>
+	<div class="copyright">
+		&copy; 2023 Expressbook Railways
+	</div>
+</footer>
+</body>
+</html>
